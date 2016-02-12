@@ -21,6 +21,7 @@ Frameworks e Plugins
 
 O projeto foi criado de forma a possibilitar que com o mesmo código fosse gerado a aplicação nas plataformas Web e Mobile.
 
-- Acesso a aplicação
-#Link01: http://mapa-tomografia.azurewebsites.net/www/
-#Link02: http://mapa-tomografias.pe.hu/
+ACESSO A APLICAÇÃO
+------------------------
+- #Link01: http://mapa-tomografia.azurewebsites.net/www/
+- #Link02: http://mapa-tomografias.pe.hu/
