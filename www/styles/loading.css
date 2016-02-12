@@ -1,0 +1,58 @@
+
+.loader {
+  height: 20px;
+  width: 100px;
+  margin: auto;
+}
+.loader--dot {
+  animation-name: loader;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background-color: black;
+  position: absolute;
+}
+.loader--dot:first-child {
+  background-color: #819FF7;
+  animation-delay: 0.5s;
+}
+.loader--dot:nth-child(2) {
+  background-color: #819FF7;
+  animation-delay: 0.4s;
+}
+.loader--dot:nth-child(3) {
+  background-color: #819FF7;
+  animation-delay: 0.3s;
+}
+.loader--dot:nth-child(4) {
+  background-color: #819FF7;
+  animation-delay: 0.2s;
+}
+.loader--dot:nth-child(5) {
+  background-color: #819FF7;
+  animation-delay: 0.1s;
+}
+.loader--dot:nth-child(6) {
+  background-color: #819FF7;
+  animation-delay: 0s;
+}
+
+
+@keyframes loader {
+  15% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(100px);
+  }
+  65% {
+    transform: translateX(100px);
+  }
+  95% {
+    transform: translateX(0);
+  }
+}
+}

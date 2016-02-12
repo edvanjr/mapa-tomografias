@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Mapa de Tomografias</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+        .divisor { width: 100%; height: 8px; background-color:#E6E6E6}   img { width: 100%}
+        .cabecalho { width: 100%; height: 20px; line-height: 20px; background-color:#81BEF7; vertical-align: middle;}
+        p { color: white; font-weight: bold; font-size: 12px;}
+        @media (min-width: 600px){ img { width: 50%; } .cabecalho { width: 50%; height: 30px; line-height: 30px; margin: 0 auto; border-radius: 5px 5px 0 0;} p {font-size: 15px;} .divisor { height: 10px;}}
+        
+        #navbar-brand-logo{
+            width: 90px;
+            margin-left: 5px;
+            background: url('images/logo_nutes.png') center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding: 0 !important;
+            transition: all .2s ease-in-out;
+        }
+
+    </style>
+
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+    
+</head>
+
+<body style="background-color:#E6E6E6; text-align: center;">
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html"><div id="navbar-brand-logo" class="navbar-brand"></div></a>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div style="margin-top: 60px;">
+        <div class="cabecalho"><p>TOMOGRAFIA 009</p></div>
+        <a href="pages/TC009.html">
+            <img class="map" src="images/TC.009.jpg"/>
+        </a>
+        <div class="divisor" ></div>
+        
+        <div class="cabecalho"><p>TOMOGRAFIA 010</p></div>
+        <a href="pages/TC010.html">
+            <img class="map" src="images/TC.010.jpg"/>
+        </a>
+        <div class="divisor" ></div>
+        
+        <div class="cabecalho"><p>TOMOGRAFIA 011</p></div>
+        <a href="pages/TC011.html">
+            <img class="map" src="images/TC.011.jpg"/>
+        </a>
+        <div class="divisor" ></div>
+        
+        <div class="cabecalho"><p>TOMOGRAFIA 012</p></div>
+        <a href="pages/TC012.html">
+            <img class="map" src="images/TC.012.jpg"/>
+        </a>    
+        <div class="divisor" ></div>
+        
+        <div class="cabecalho"><p>TOMOGRAFIA 013</p></div>
+        <a href="pages/TC013.html">
+            <img class="map" src="images/TC.013.jpg"/>
+        </a>
+        <div class="divisor" ></div>
+        
+        <div class="cabecalho"><p>TOMOGRAFIA 014</p></div>
+        <a href="pages/TC014.html">
+            <img class="map" src="images/TC.014.jpg"/>
+        </a>
+        <div class="divisor" ></div>
+        
+        <div class="cabecalho"><p>TOMOGRAFIA 015</p></div>
+        <a href="pages/TC015.html">
+            <img class="map" src="images/TC.015.jpg"/>
+        </a>        
+        <div class="divisor" ></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html ng-app ="mapa-tomografia">
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <html ng-app ="mapa-tomografia">
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Tomografia 014</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../styles/loading.css">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+        img[usemap] { border: none; height: auto; max-width: 100%; width: auto;}
+        .teste{width: 100%;}      .alert{margin-left: 3px; margin-right: 3px; padding: 5px;}
+        .navbar {margin-bottom: 0px;}     #botoes-zoom { display: none; }
+        @media (min-width: 600px){ .teste{width: 50%; margin-left: 10px; float: left;} .alert{margin-left: 0px; margin-right: 0px;} section { text-align: center; margin: 20px 0; } #botoes-zoom { display: block; }
+        .alert{padding: 10px;}}
+        #reset { border-radius: 0px; -webkit-border-radius: 0px; -moz-border-radius: 0px; }
+    
+        #navbar-brand-logo{
+            width: 90px;
+            margin-left: 5px;
+            background: url('../images/logo_nutes.png') center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding: 0 !important;
+            transition: all .2s ease-in-out;
+        }
+
+      .panzoom-parent { border: 2px solid #333; }
+      .panzoom-parent .panzoom { border: 2px dashed #666; }
+    </style>
+
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+    <script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/image-mapster.js"></script> <!-- demarcação das áreas -->
+    <script src="../js/panzoom.js"></script> <!-- zoom nas imagens -->
+</head>
+
+<body ng-controller="img" style="background-color: #084B8A">
+    
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="../index.html"><div id="navbar-brand-logo" class="navbar-brand"></div></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="teste">
+        <div class="parent">
+            <div class="panzoom">
+                <img class="map" src="../images/TC.014.jpg" id="tc014" usemap="#014" width="1024" height="768"/>
+            </div>
+        </div>
+
+        <div>
+            <button id="reset" class="btn btn-success btn-xs btn-block">Resetar Imagem</button>
+        </div>
+        
+        <div id="retorno" class="alert alert-info text-center" style="margin-top: 5px;">
+            <p>{{descricao}}</p> 
+        <div>
+    </section>
+
+    <div id="botoes-zoom" style="float:left; margin-left: 8px; margin-top: 20px;">
+        <button type="button" id="zoom-in" class="btn btn-default" style="margin-bottom: 3px;"><i class="icon-zoom-in icon-large"></i></button><br>
+        <button type="button" id="zoom-out" class="btn btn-default" style="margin-bottom: 3px;"><i class="icon-zoom-out icon-large"></i></button><br>
+    </div>
+        
+    <map name="014">
+            <area shape="poly" cor="vermelho" coords="735,489,762,565,770,550,780,540,788,531,795,522,796,512,788,499,778,492,768,487,754,487,747,489" href="#" ng-click="info(1,6)"/>
+            
+            <area shape="poly" cor="azul" coords="687,354,707,341,717,362,726,382,731,397,741,404,754,415,761,426,763,436,755,443,747,445,734,445,721,441,710,436,702,426,697,418,699,407,705,400,703,388,698,375,697,367,694,361" href="#" ng-click="info(2,6)"/>
+            
+            <area shape="poly" cor="amarelo" coords="687,350,686,354,679,346,701,329,706,340" href="#" ng-click="info(3,6)"/>
+
+            <area shape="poly" cor="azul1" coords="672,305,667,310,667,319,676,318,680,311,680,306" href="#" ng-click="info(8,6)"/>
+            
+            <area shape="poly" cor="amarelo1" coords="683,313,682,321,691,326,696,319,693,315" href="#" ng-click="info(10,6)"/>
+            
+            <area shape="poly" cor="verde" coords="674,293,683,306,694,307,695,303,692,297,685,292" href="#" ng-click="info(9,6)"/>
+            
+            <area shape="poly" cor="vermelho1" coords="678,324,687,329,696,329,694,337,684,339,676,342,671,342,664,337,657,329,650,320,643,309,644,300,649,294,660,288,668,289,678,290,681,303,673,306,668,311,666,316,668,325,676,328" href="#" ng-click="info(11,6)"/>
+            
+            <area shape="poly" cor="lilas" coords="617,315,610,325,600,330,609,337,616,332,620,326,623,321" href="#" ng-click="info(12,6)"/>
+
+            <area shape="poly" cor="azul2" coords="622,376,615,382,613,390,623,395,628,389,628,384" href="#" ng-click="info(6,6)"/>
+            
+            <area shape="poly" cor="azul4" coords="628,340,623,348,625,357,632,354,637,351,639,344,635,340" href="#" ng-click="info(13,6)"/>
+            
+            <area shape="poly" cor="verde1" coords="641,395,648,405,656,409,664,408,657,417,649,414,644,410,641,408" href="#" ng-click="info(4,6)"/>
+            
+            <area shape="poly" cor="verde1" coords="671,364,673,360,676,358,683,366,684,374,682,383,678,376,678,370" href="#" ng-click="info(4,6)"/>
+        
+            <area shape="poly" cor="laranja" coords="699,321,707,334,714,347,721,364,729,377,736,392,745,401,750,398,742,384,734,374,730,364,725,358,722,348,717,340,714,332,712,325,707,321" href="#" ng-click="info(5,6)"/>
+
+            <area shape="poly" cor="azul3" coords="543,335,539,345,539,356,544,369,555,376,559,370,559,360,559,351,557,343,553,337" href="#" ng-click="info(7,6)"/>
+        </map>
+    
+<!-- SCRIPTS -->    
+<script type="text/javascript">
+  $('#tc014').mapster({
+        mapKey: 'cor',
+        fillColor: 'ff0000',
+        fillOpacity: 0.7,
+        selected: true,
+        fillColor: 'ff0000',
+        fillOpacity: 0.5,
+        stroke: true,
+        strokeWidth: 1,
+        singleSelect: true,
+        staticState: true,
+        onClick: function(e) {
+            $(this).mapster('set',false).mapster('set',true,{ fillOpacity: 1 });
+        },
+        areas: [{
+            key: 'azul',
+            fillColor: '045FB4',
+            strokeColor: '045FB4'
+        },
+        { 
+            key: 'azul1',
+            fillColor: '045FB4',
+            strokeColor: '045FB4'
+        },
+        { 
+            key: 'azul2',
+            fillColor: '045FB4',
+            strokeColor: '045FB4'
+        }, 
+        {
+            key: 'azul3',
+            fillColor: '045FB4',
+            strokeColor: '045FB4'
+        },
+        {
+            key: 'azul4',
+            fillColor: '045FB4',
+            strokeColor: '045FB4'
+        },
+        {
+            key: 'verde',
+            fillColor: '01DF01',
+            strokeColor: '01DF01'
+        },
+        {
+            key: 'verde1',
+            fillColor: '01DF01',
+            strokeColor: '01DF01'
+        },
+        {
+            key: 'amarelo',
+            fillColor: 'FFFF00',
+            strokeColor: 'FFFF00'
+        },
+        {
+            key: 'laranja',
+            fillColor: 'FF8700',
+            strokeColor: 'FF8700'
+        },
+        {
+            key: 'lilas',
+            fillColor: '8A0886',
+            strokeColor: '8A0886'
+        },
+        {
+            key: 'amarelo1',
+            fillColor: 'FFFF00',
+            strokeColor: 'FFFF00'
+        }]
+    });
+
+    (function() {
+          var $section = $('section').first();
+          $section.find('.panzoom').panzoom({
+            $zoomIn: $("#zoom-in"),
+            $zoomOut: $("#zoom-out"),
+            $reset: $("#reset")
+          });
+    })();
+    
+</script>
+<script type="application/javascript" src="../js/angular/angular.min.js"></script>
+<script type="application/javascript" src="../js/controllers/app.js"></script> 
+<!-- fIM SCRIPTS -->
+</body>
+</html>
