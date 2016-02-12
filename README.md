@@ -23,5 +23,10 @@ O projeto foi criado de forma a possibilitar que com o mesmo código fosse gerad
 
 ACESSO A APLICAÇÃO
 ------------------------
+
+Web
 - #Link01: http://mapa-tomografia.azurewebsites.net/www/
 - #Link02: http://mapa-tomografias.pe.hu/
+
+APK
+- #Link01: https://drive.google.com/file/d/0B1lY24e0EWRVcXRhTkVfUWJ4UTQ/view?usp=sharing
